@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Person;
 import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,7 +25,8 @@ public class UserController {
     @RequestMapping(value ="/showUser", method = RequestMethod.GET)
     @ResponseBody
     public String selectUser (){
-        String name="haoWorld!";
+        Person person=userService.selectUser(1);
+        String name=person.getName();
 
         return name;
 
