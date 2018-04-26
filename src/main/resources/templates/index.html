@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot and Thymeleaf</title>
+</head>
+<body>
+<h3>Spring Boot and Thymeleaf</h3>
+<p>Hello World!</p>
+
+
+<a th:href="@{/showUser(userid='123',username='张三')}" >用户</a>
+<p>今天是：<span th:text="2018-04-25">132465798</span></p>
+<span th:text="|1235435,${user}|"></span>
+
+</body>
+</html>
