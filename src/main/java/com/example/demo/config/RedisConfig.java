@@ -22,6 +22,14 @@ import redis.clients.jedis.JedisPoolConfig;
 @Configuration
 @PropertySource("classpath:config/redis.properties")
 public class RedisConfig {
+    @Value("${redis.hostName}")
+    private String hostName;
+
+    @Value("${redis.port}")
+    private Integer port;
+
+    @Value("${redis.timeout}")
+    private Integer timeout;
 
     @Value("${redis.maxIdle}")
     private Integer maxIdle;
@@ -95,13 +103,13 @@ public class RedisConfig {
         //连接池
         JedisConnectionFactory.setPoolConfig(jedisPoolConfig);
         //IP地址
-        JedisConnectionFactory.setHostName("127.0.0.1");
+        JedisConnectionFactory.setHostName(hostName);
         //端口号
-        JedisConnectionFactory.setPort(6379);
+        JedisConnectionFactory.setPort(port);
         //如果Redis设置有密码
         //JedisConnectionFactory.setPassword(password);
         //客户端超时时间单位是毫秒
-        JedisConnectionFactory.setTimeout(5000);
+        JedisConnectionFactory.setTimeout(timeout);
         return JedisConnectionFactory;
     }
 
