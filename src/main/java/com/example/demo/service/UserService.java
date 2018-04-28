@@ -51,5 +51,7 @@ public class UserService implements UserMapper{
         util.lSet("persons",p2);
         util.lSet("persons",p3);
 
+        util.lSet("pp",list);
+
     }
 }

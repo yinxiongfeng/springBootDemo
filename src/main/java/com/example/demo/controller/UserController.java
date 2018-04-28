@@ -84,6 +84,13 @@ public class UserController {
             System.out.println(work.next());
         }
 
+        System.out.println(util.lGet("pp",0,5));
+        List list=util.lGet("pp",0,5);
+        List<Person> list1=(List<Person>) list.get(0);
+        for(Person p:list1){
+            System.out.println(p.getId()+"--"+p.getName()+"--"+p.getAge());
+        }
+
         return n;
 
     }
